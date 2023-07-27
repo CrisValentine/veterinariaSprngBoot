@@ -1,0 +1,15 @@
+com\example\servingwebcontent\model\TaPacientes.class
+com\example\servingwebcontent\model\TaCitas.class
+com\example\servingwebcontent\model\TaVeterinariosPK.class
+com\example\servingwebcontent\model\TaVeterinarios.class
+com\example\servingwebcontent\repository\TaPropietariosRepository.class
+com\example\servingwebcontent\repository\TaVeterinariosRepository.class
+com\example\servingwebcontent\GreetingController.class
+com\example\servingwebcontent\repository\TaCitasRepository.class
+com\example\servingwebcontent\controller\GenericCtrl.class
+com\example\servingwebcontent\genericservice\IGenericService.class
+com\example\servingwebcontent\model\TaPropietarios.class
+com\example\servingwebcontent\serviceimpl\GenericServiceImpl.class
+com\example\servingwebcontent\repository\TaPacientesRepository.class
+com\example\servingwebcontent\model\TaTipoPacientes.class
+com\example\servingwebcontent\ServingWebContentApplication.class
