@@ -32,53 +32,48 @@ import com.example.servingwebcontent.model.TaVeterinarios;
 //@CrossOrigin(origins = "http://localhost:8080/")
 @RequestMapping("/api/v1")
 public class GenericCtrl {
-	private Map<String, String> requestBody;
-	private static final String GENERIC_CONTROLLER = "/genericController";
 	@Autowired
 	private IGenericService service;
-	private String url = "";
 
 	public GenericCtrl() {
 		super();
 	}
 
 	@PostMapping("/agregarVeterinario")
-	public List<HashMap<String, Object>> agregarVeterinario(@RequestBody TaVeterinarios vet) {
+	public Map<String, Object> agregarVeterinario(@RequestBody TaVeterinarios vet) {
 		ArrayList<HashMap<String, Object>> retArrList = new ArrayList<HashMap<String, Object>>();
 
 		HashMap<String, Object> savingResult;
 		savingResult = service.saveVeterinarios(vet);
 
-		retArrList.add(savingResult);
-
-		return retArrList;
+		return savingResult;
 
 	}
 
 	@PostMapping("/agregarPropietario")
-	public List<HashMap<String, Object>> agregarPropietario(@RequestBody TaPropietarios propDto) {
+	public Map<String, Object> agregarPropietario(@RequestBody TaPropietarios propDto) {
+		HashMap<String, Object> hashMap;
+		hashMap = service.savePropietarios(propDto);
 
-		service.savePropietarios(propDto);
-
-		return new ArrayList<>();
+		return hashMap;
 
 	}
 
 	@PostMapping("/agregarPacientes")
-	public List<HashMap<String, Object>> agregarPacientes(@RequestBody TaPacientes pacientes) {
+	public Map<String, Object> agregarPacientes(@RequestBody TaPacientes pacientes) {
+		HashMap<String, Object> hashMap;
+		hashMap = service.savePacientes(pacientes);
 
-		service.savePacientes(pacientes);
-
-		return new ArrayList<>();
+		return hashMap;
 
 	}
 
 	@PostMapping("/agregarCitas")
-	public List<HashMap<String, Object>> agregarCitas(@RequestBody TaCitas citas) {
+	public Map<String, Object> agregarCitas(@RequestBody TaCitas citas) {
+		HashMap<String, Object> hashMap;
+		hashMap = service.saveCitas(citas);
 
-		service.saveCitas(citas);
-
-		return new ArrayList<>();
+		return hashMap;
 
 	}
 
